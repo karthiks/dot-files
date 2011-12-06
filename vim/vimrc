@@ -29,6 +29,12 @@ Bundle 'railscasts'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'mrueegg/vim_hlint_mode'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
+Bundle 'vim-scripts/ZoomWin'
+Bundle 'tpope/gem-ctags'
+Bundle 'vim-scripts/foldcol.vim'
 autocmd FileType haskell compiler hlint
 
 :imap jj <Esc>
