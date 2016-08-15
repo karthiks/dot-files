@@ -1,54 +1,46 @@
 filetype off
-set rtp+=~/.vim/vundle/
-call vundle#rc()
+set rtp+=~/.vim/vundle
+call vundle#begin()   "required
 
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'gregsexton/gitv'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
 :set lazyredraw
 highlight diffAdded guifg=#00bf00
 highlight diffRemoved guifg=#bf0000
-Bundle 'tomtom/tcomment_vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-rails'
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'supertab'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'endwise.vim'
-Bundle 'matchit.zip'
-Bundle 'textobj-user'
-Bundle 'textobj-rubyblock'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-rails'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'supertab'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'endwise.vim'
+Plugin 'matchit.zip'
+Plugin 'textobj-user'
+Plugin 'textobj-rubyblock'
 runtime macros/matchit.vim
-Bundle 'unimpaired.vim'
-Bundle 'errormarker.vim'
-Bundle 'abolish.vim'
-Bundle 'camelcasemotion'
-Bundle 'railscasts'
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'mrueegg/vim_hlint_mode'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-bundler'
-Bundle 'vim-scripts/ZoomWin'
-Bundle 'tpope/gem-ctags'
-Bundle 'vim-scripts/foldcol.vim'
+Plugin 'unimpaired.vim'
+Plugin 'errormarker.vim'
+Plugin 'abolish.vim'
+Plugin 'camelcasemotion'
+Plugin 'railscasts'
+Plugin 'lukerandall/haskellmode-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-bundler'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'tpope/gem-ctags'
+Plugin 'vim-scripts/foldcol.vim'
+
+call vundle#end()   "required
+filetype plugin indent on   "required
+
 autocmd FileType haskell compiler hlint
 
 :imap jj <Esc>
-
-"----- Setting Font Size ------"
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h15
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
-endif
 
 " NERDTree key mapping
 map <F12> :NERDTreeToggle<CR>
