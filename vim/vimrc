@@ -13,7 +13,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-rails'
 Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-surround'
-Bundle 'SuperTab continued'
+Bundle 'supertab'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'endwise.vim'
@@ -38,6 +38,17 @@ Bundle 'vim-scripts/foldcol.vim'
 autocmd FileType haskell compiler hlint
 
 :imap jj <Esc>
+
+"----- Setting Font Size ------"
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h15
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
 
 " NERDTree key mapping
 map <F12> :NERDTreeToggle<CR>
@@ -279,17 +290,17 @@ set tags=./tags;
 let g:fuf_splitPathMatching=1
 
 " Open URL
-command -bar -nargs=1 OpenURL :!open <args>
-function! OpenURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
-  echo s:uri
-  if s:uri != ""
-	  exec "!open \"" . s:uri . "\""
-  else
-	  echo "No URI found in line."
-  endif
-endfunction
-map <Leader>w :call OpenURL()<CR>
+"command -bar -nargs=1 OpenURL :!open <args>
+"function! OpenURL()
+"  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+"  echo s:uri
+"  if s:uri != ""
+"	  exec "!open \"" . s:uri . "\""
+"  else
+"	  echo "No URI found in line."
+"  endif
+"endfunction
+"map <Leader>w :call OpenURL()<CR>
 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set hidden
@@ -329,3 +340,4 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 set autowriteall
 
 let g:fuf_patternSeparator = ';'
+
